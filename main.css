@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Tinos:wght@400;700&display=swap);
+h1 {
+    color: brown;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tanos', serif;
+    transition: .2s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.keyboard_wrapp {
+    max-width: 768px;
+    width: 100%;
+    background-color: antiquewhite;
+    overflow: hidden;
+    position: relative;
+}
+.row {
+    flex-direction: row;
+}
