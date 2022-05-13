@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const { config } = require('process');
+const HtmlMinifierTerser = require('html-minifier-terser');
 
 const optimization = () => {
     if (isProd) {
@@ -29,7 +30,14 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: './src/index.html',
             minify: {
-                collapseWhitespace: isProd
+                collapseWhitespace: isProd,
+                favicon: `favicon.ico`,
+                keepClosingSlash: isProd,
+                removeComments: isProd,
+                removeRedundantAttributes: isProd,
+                removeScriptTypeAttributes: isProd,
+                removeStyleLinkTypeAttributes: isProd,
+                useShortDoctype: isProd
             }
         }),
         new CopyWebpackPlugin({
